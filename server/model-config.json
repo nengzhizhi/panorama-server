@@ -31,5 +31,13 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "LiveStreamUrl": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Shop": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }
