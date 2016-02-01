@@ -1,0 +1,17 @@
+{
+  "name": "liveStreamUrl",
+  "plural": "ls",
+  "base": "PersistedModel",
+  "properties": {
+    "shop": {
+      "type": "string",
+      "required": true
+    },
+    "urls": {
+      "type": "array",
+      "required": true
+    }
+  },
+  "relations": {},
+  "acls": []
+}
