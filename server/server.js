@@ -1,7 +1,13 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var path = require('path');
 
 var app = module.exports = loopback();
+
+//path for angular client
+app.use(loopback.static(path.resolve(__dirname, '../client/backend/app')));
+//path for bower_components
+app.use(loopback.static(path.resolve(__dirname, '../client/backend/')));
 
 app.start = function() {
   // start the web server
