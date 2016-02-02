@@ -5,10 +5,10 @@ module.exports = function (app) {
   var LiveStreamUrl = app.models.LiveStreamUrl;
   var Shop = app.models.Shop;
 
-  // var shops = [
-  //   { name: '大悦城', shopId: 001 }
-  // ]
-  //
+  var shops = [
+    { name: '大悦城' }
+  ]
+
   // if (!!Shop && !!LiveStreamUrl) {
   //   shops.forEach(function (shop) {
   //     Shop.findOrCreate({
@@ -46,7 +46,15 @@ module.exports = function (app) {
   //   console.log(err, result);
   // })
 
-  LiveStreamUrl.find({include: 'shop'}, function (err, result) {
-    console.log(err, result);
-  })
+  // Shop.findOne({
+  //     where: { name: '大悦城' }
+  //   },
+  //   function (err, result) {
+  //     console.log(err, result);
+  //   }
+  // )
+
+  // LiveStreamUrl.find({include: 'shop'}, function (err, result) {
+  //   console.log(err, result);
+  // })
 }

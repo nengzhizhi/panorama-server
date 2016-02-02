@@ -8,5 +8,12 @@
       }
     },
     "relations": {
-    }
+      "liveStream": {
+        "type": "belongsTo",
+        "model": "LiveStreamUrl",
+        "foreignKey": "ShopId"
+      }
+    },
+    "acls": [],
+    "method": []
 }
