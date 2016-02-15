@@ -1,6 +1,7 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 var path = require('path');
+var bodyParser = require('body-parser');
 
 var app = module.exports = loopback();
 
@@ -8,6 +9,13 @@ var app = module.exports = loopback();
 app.use(loopback.static(path.resolve(__dirname, '../client/backend/app')));
 //path for bower_components
 app.use(loopback.static(path.resolve(__dirname, '../client/backend/')));
+
+// to support JSON-encoded bodies
+app.use(bodyParser.json());
+// to support URL-encoded bodies
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.start = function() {
   // start the web server

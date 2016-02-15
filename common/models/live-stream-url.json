@@ -10,7 +10,7 @@
   },
   "relations": {
     "shop": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "Shop",
       "foreignKey": "shopId",
       "required": true

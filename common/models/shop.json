@@ -9,9 +9,9 @@
     },
     "relations": {
       "liveStream": {
-        "type": "belongsTo",
+        "type": "hasOne",
         "model": "LiveStreamUrl",
-        "foreignKey": "ShopId"
+        "foreignKey": "lsId"
       }
     },
     "acls": [],
