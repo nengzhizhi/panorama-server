@@ -1,0 +1,25 @@
+{
+  "name": "LiveStream",
+  "plural": "liveStreams",
+  "base": "PersistedModel",
+  "properties": {
+    "type": {
+      "type": "String",
+      "required": true
+    },
+    "value": {
+      "type": "String",
+      "required": true
+    }
+  },
+  "relations": {
+    "shop": {
+      "type": "belongsTo",
+      "model": "Shop",
+      "foreignKey": "shopId",
+      "required": true
+    }
+  },
+  "acls": [],
+  "method": []
+}

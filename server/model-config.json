@@ -36,6 +36,10 @@
     "dataSource": "mongodb",
     "public": true
   },
+  "LiveStream": {
+    "dataSource": "mongodb",
+    "public": true
+  },
   "Shop": {
     "dataSource": "mongodb",
     "public": true

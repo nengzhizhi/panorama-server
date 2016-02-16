@@ -7,13 +7,14 @@
         "required": true
       }
     },
+    "validations": [],
     "relations": {
-      "liveStream": {
-        "type": "hasOne",
-        "model": "LiveStreamUrl",
-        "foreignKey": "lsId"
+      "liveStreams": {
+        "type": "hasMany",
+        "model": "LiveStream",
+        "foreignKey": "shopId"
       }
     },
     "acls": [],
-    "method": []
+    "methods": {}
 }
