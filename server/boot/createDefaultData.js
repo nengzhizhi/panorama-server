@@ -20,12 +20,14 @@ module.exports = function (app) {
     //     value: 'http://xxxx.flv'
     //   }, next);
     // }
-    function getShop(next){
-      Shop.findOne({
-        where: { name: "万达" },
-        include: 'liveStreams'
-      }, next);
-    }
+
+    // function getShop(next){
+    //   Shop.findOne({
+    //     where: { name: "万达" },
+    //     include: 'liveStreams'
+    //   }, next);
+    // }
+
     // function getStream(next){
     //   LiveStream.findOne({
     //     include: 'shop'
