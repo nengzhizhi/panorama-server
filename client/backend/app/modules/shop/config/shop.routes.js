@@ -8,7 +8,7 @@
 					abstract: true,
 					url: '/shop',
 					templateUrl: 'modules/shop/views/main.html'
-				})			
+				})
 				.state('app.shop.list', {
 					url: '/list',
 					templateUrl: 'modules/shop/views/list.html',
