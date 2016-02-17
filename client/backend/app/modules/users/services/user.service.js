@@ -24,8 +24,6 @@
             type: 'select',
             templateOptions: {
               label: '角色',
-
-
               options: [
                 {
                   name: '管理员',

@@ -9,6 +9,6 @@
 			'ui.router',
 			'com.module.core',
 			'com.module.users',
-			'com.module.examples'
+			'com.module.shop'
 		]);
 })();
