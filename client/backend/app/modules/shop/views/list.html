@@ -1,59 +1,61 @@
-<div class="box">
-  <div class="box-header">
-    <h3 class="box-title">店铺管理</h3>
-    <div class="box-tools">
-      <span class="pull-right btn-group">
-        <a href="" class="btn btn-default" ui-sref="^.add()">
-          <i class="fa fa-plus"></i>
-        </a>
-      </span>
+<div class="col-md-8">
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">店铺管理</h3>
+      <!-- <div class="box-tools">
+        <span class="pull-right btn-group">
+          <a href="" class="btn btn-default" ui-sref="^.add()">
+            <i class="fa fa-plus"></i>
+          </a>
+        </span>
 
-      <div class="input-group input-group-sm" style="width: 150px;">
-        <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-        <div class="input-group-btn">
-          <button type="submit" class="btn btn-default">
-            <i class="fa fa-search"></i>
-            查找
-          </button>
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-default">
+              <i class="fa fa-search"></i>
+              查找
+            </button>
+          </div>
         </div>
-      </div>
+      </div> -->
     </div>
-  </div>
-  <div class="box-body table-responsive no-padding">
-    <table class="table table-hover">
-      <tbody>
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <tbody>
           <tr>
-          <th>店铺ID</th>
-          <th>店铺名</th>
-        </tr>
-        <tr ng-repeat="shop in ctrl.shops">
-          <td>{{shop.id}}</td>
-          <td>{{shop.name}}</td>
-          <td><span class="label label-success">Approved</span></td>
-<!--           <td>
-            <a class="btn btn-xs btn-default" ui-sref="app.users.password({ id: user.id })">
-              <i class="fa fa-key"></i>
-            </a>
-            <a class="btn btn-xs btn-default" ui-sref="app.users.edit({ id: user.id })">
-              <i class="fa fa-pencil"></i>
-            </a>
-            <a class="btn btn-xs btn-danger" ui-sref="app.users.delete({ id: user.id })">
-              <i class="fa fa-trash-o"></i>
-            </a>
-          </td> -->
-        </tr>
-      </tbody>
-    </table>
-  </div>
+            <th>店铺名</th>
+            <th>店铺ID</th>
+          </tr>
+          <tr ng-repeat="shop in ctrl.shops">
+            <td><a ui-sref="app.shop.edit({ id: shop.id })">{{shop.name}}</a></td>
+            <td>{{shop.id}}</td>
+            <!-- <td><span class="label label-success">Approved</span></td>           -->
+  <!--           <td>
+              <a class="btn btn-xs btn-default" ui-sref="app.users.password({ id: user.id })">
+                <i class="fa fa-key"></i>
+              </a>
+              <a class="btn btn-xs btn-default" ui-sref="app.users.edit({ id: user.id })">
+                <i class="fa fa-pencil"></i>
+              </a>
+              <a class="btn btn-xs btn-danger" ui-sref="app.users.delete({ id: user.id })">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  <!-- FIX ME -->
-  <div class="box-footer clearfix">
-    <ul class="pagination pagination-sm no-margin pull-right">
-      <li><a href="#">«</a></li>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">»</a></li>
-    </ul>
+    <!-- FIX ME -->
+    <!-- <div class="box-footer clearfix">
+      <ul class="pagination pagination-sm no-margin pull-right">
+        <li><a href="#">«</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">»</a></li>
+      </ul>
+    </div> -->
   </div>
 </div>

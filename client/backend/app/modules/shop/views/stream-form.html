@@ -8,25 +8,15 @@
         <div class="row">
           <div class="col-md-4">
             <div class="alert alert-danger" ng-if="addError" translate>Could not add note!</div>
-            <formly-form model="ctrl.shop" fields="ctrl.formFields" options="ctrl.formOptions"></formly-form>
+            <formly-form model="ctrl.stream" fields="ctrl.streamFormFields" options="ctrl.streamFormOptions"></formly-form>
           </div>
         </div>
-        <table class="table table-hover">
-          <tr ng-repeat="stream in ctrl.streams">
-            <td>{{stream.type}}</td>
-            <td>{{stream.value}}</td>
-            <td>
-              <a ui-sref="app.shop.stream({ id: '56c55740b5fe13e416392ce2' })" class="btn btn-default">编辑</a>
-              <a href="#" class="btn btn-danger">删除</a>
-            </td>
-          </tr>
-        </table>
       </div>
       <div class="panel-footer">
         <button type="submit" class="btn btn-primary btn-success" ng-click="ctrl.submit()" ng-disabled="form.$invalid">
           提交
         </button>
-        <button type="button" class="btn btn-default" ng-click="ctrl.formOptions.resetModel()">重置</button>
+        <button type="button" class="btn btn-default" ng-click="ctrl.streamFormOptions.resetModel()">重置</button>
       </div>
     </div>
   </form>
