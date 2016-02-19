@@ -2,46 +2,32 @@
 	'use strict';
 	angular
 		.module('com.module.shop')
-		.service('ShopService', function (Shop) {
+		.service('ShopService', function (CoreService, Shop) {
 			this.getShop = function (id) {
 				return Shop.findById({ id: id }).$promise;
 			}
 
-			this.upsertShop = function (shop) {
-				return Shop.upsert(shop).$promise
-					.then(function () {
-
-					})
-					.catch( function (err) {
-
-					})
+			this.upsertShop = function (shop, successCb, cancelCb) {
+				return Shop.upsert(shop).$promise.then(function () {
+					CoreService.alertSuccess('保存成功！', '', successCb);
+				}, function (err) {
+					CoreService.alertError('删除失败！', err, cancelCb);
+				})
 			}
 
-			this.getShopStreams= function (id) {
+			this.deleteShop = function (id, successCb, cancelCb) {
+				CoreService.confirm('确定删除？', '删除后无法恢复', function () {
+					Shop.deleteById(id).$promise.then(function () {
+						CoreService.alertSuccess('删除成功！', '', successCb);
+					}, function (err) {
+						CoreService.alertError('删除失败！', err, cancelCb);
+					});
+				})
+			}
+
+			this.getShopStreams = function (id) {
 				return Shop.liveStreams({ id: id }).$promise;
 			}
-
-			this.getStreamFormFields = function () {
-				return [
-					{
-						key: 'type',
-						type: 'input',
-						templateOptions: {
-							label: '码流类型',
-							required: true
-						}
-					}
-					, {
-						key: 'value',
-						type: 'input',
-						templateOptions: {
-							label: '码流值',
-							required: true
-						}
-					}
-				]
-			}
-
 
 			this.getFormFields = function () {
 				return [

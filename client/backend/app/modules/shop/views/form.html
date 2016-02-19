@@ -5,29 +5,38 @@
         <a href="" ui-sref="^.list" class="btn btn-xs btn-default"><i class="fa fa-arrow-left"></i></a>
       </div>
       <div class="panel-body">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="alert alert-danger" ng-if="addError" translate>Could not add note!</div>
-            <formly-form model="ctrl.shop" fields="ctrl.formFields" options="ctrl.formOptions"></formly-form>
-          </div>
+        <formly-form model="ctrl.shop" fields="ctrl.formFields" options="ctrl.formOptions"></formly-form>
+
+        <div ng-if="ctrl.shop.id">
+          <a ui-sref="app.shop.addStream({ shopId: ctrl.shop.id })" class="btn btn-success btn-block">
+            <i class="fa fa-plus"></i>添加码流
+          </a>
+
+          <table class="table table-hover">
+            <tr>
+              <th>码流类型</th>
+              <th>码流地址</th>
+              <th>操作</th>
+            </tr>
+            <tr ng-repeat="stream in ctrl.streams">
+              <td>{{stream.type}}</td>
+              <td>{{stream.value}}</td>
+              <td>
+                <a ui-sref="app.shop.editStream({ id: stream.id })" class="btn btn-default">编辑</a>
+                <a ng-click="ctrl.deleteStream(stream.id)" class="btn btn-danger">删除</a>
+              </td>
+            </tr>
+          </table>
         </div>
-        <table class="table table-hover">
-          <tr ng-repeat="stream in ctrl.streams">
-            <td>{{stream.type}}</td>
-            <td>{{stream.value}}</td>
-            <td>
-              <a ui-sref="app.shop.stream({ id: '56c55740b5fe13e416392ce2' })" class="btn btn-default">编辑</a>
-              <a href="#" class="btn btn-danger">删除</a>
-            </td>
-          </tr>
-        </table>
       </div>
+
       <div class="panel-footer">
-        <button type="submit" class="btn btn-primary btn-success" ng-click="ctrl.submit()" ng-disabled="form.$invalid">
+        <button type="submit" class="btn btn-primary btn-success" ng-click="ctrl.submit('123')" ng-disabled="form.$invalid">
           提交
         </button>
         <button type="button" class="btn btn-default" ng-click="ctrl.formOptions.resetModel()">重置</button>
       </div>
+
     </div>
   </form>
 </div>
