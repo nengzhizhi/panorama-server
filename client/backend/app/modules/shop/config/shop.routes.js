@@ -9,6 +9,7 @@
 					url: '/shop',
 					templateUrl: 'modules/shop/views/main.html'
 				})
+				
 				.state('app.shop.add', {
 					url: '/add',
 					templateUrl: 'modules/shop/views/form.html',
