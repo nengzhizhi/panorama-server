@@ -3,6 +3,30 @@
   angular
     .module('com.module.users')
     .service('UserService', function ($state) {
+      this.getLoginFormFields = function () {
+        var loginForm = [
+          {
+  					key: 'username',
+  					type: 'input',
+  					templateOptions: {
+  						placeholder: '账号',
+  						require: true,
+  						type: 'input'
+  					}
+  				},
+  				{
+  					key: 'password',
+  					type: 'input',
+  					templateOptions: {
+  						placeholder: '密码',
+  						require: true,
+  						type: 'password'
+  					}
+  				}
+        ]
+        return loginForm;
+      }
+
       this.getFormFields = function (formType) {
         var form = [
           {

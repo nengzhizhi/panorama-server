@@ -4,7 +4,7 @@
 		.module('com.module.core')
 		.run(function ($rootScope) {
 			//设置标题
-			$rootScope.title = "Backend";
+			$rootScope.title = "EXE全景直播";
 
 			//左侧导航菜单
 			$rootScope.menu = [];
